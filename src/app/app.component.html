@@ -1,8 +1,39 @@
-<h1>{{ title }}</h1>
+<md-sidenav-container>
+  <md-sidenav #sidenav>
+    L'eventuel menu ici
+  </md-sidenav>
 
-<!-- this creates a google map on the page with the given lat/lng from -->
-<!-- the component as the initial center of the map: -->
+  <h1>{{ title }}</h1>
 
-<sebm-google-map [latitude]="lat" [longitude]="lng">
-  <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
-</sebm-google-map>
+  <!-- this creates a google map on the page with the given lat/lng from -->
+  <!-- the component as the initial center of the map: -->
+
+  <md-checkbox class="example-margin" [(ngModel)]="checked">Checked</md-checkbox>
+
+  <button md-mini-fab class="example-fab" (click)="sidenav.toggle()">
+    <md-icon>Affiche side nav</md-icon>
+  </button>
+
+  <sebm-google-map [latitude]="lat" [longitude]="lng">
+    <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+  </sebm-google-map>
+
+  <md-toolbar>
+    <h1>Custom Toolbar</h1>
+
+    test test
+  </md-toolbar>
+
+
+
+  <md-menu #appMenu="mdMenu">
+  <button md-menu-item> Settings </button>
+  <button md-menu-item> Help </button>
+</md-menu>
+
+<button md-icon-button [mdMenuTriggerFor]="appMenu">
+   <md-icon>more_vert</md-icon>
+</button>
+
+</md-sidenav-container>
+

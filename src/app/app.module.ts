@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
+import { MaterialModule } from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -17,7 +19,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     HttpModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAmdLnTfE2KzdRjmsyYtXjNer11yUgU3Ig'
-    })
+    }),
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
